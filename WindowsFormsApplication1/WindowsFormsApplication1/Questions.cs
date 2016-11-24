@@ -11,7 +11,8 @@ namespace WindowsFormsApplication1
         public string[] question;
         public string[,] options;
         public byte[] ans;
-        public int i, score;
+        public byte i, score;
+        public int timeLeft;
 
         public Questions()
         {
@@ -25,6 +26,7 @@ namespace WindowsFormsApplication1
             ans = new byte[] { 2, 2, 2, 1, 2 };
 
             i = 0; score = 0;
+            timeLeft = 16;
         }
     }
 }

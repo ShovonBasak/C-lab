@@ -37,7 +37,8 @@
             this.timeLimit = new System.Windows.Forms.Label();
             this.score = new System.Windows.Forms.Label();
             this.finalScore = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.timeLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // question
@@ -115,15 +116,25 @@
             this.finalScore.TabIndex = 8;
             this.finalScore.Text = "Score : ";
             // 
-            // timer1
+            // timer
             // 
-            this.timer1.Interval = 1000;
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // timeLabel
+            // 
+            this.timeLabel.AutoSize = true;
+            this.timeLabel.Location = new System.Drawing.Point(465, 9);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(0, 13);
+            this.timeLabel.TabIndex = 9;
             // 
             // quizForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 315);
+            this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.finalScore);
             this.Controls.Add(this.score);
             this.Controls.Add(this.timeLimit);
@@ -150,7 +161,8 @@
         private System.Windows.Forms.Label timeLimit;
         private System.Windows.Forms.Label score;
         private System.Windows.Forms.Label finalScore;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Label timeLabel;
     }
 }
 
